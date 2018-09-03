@@ -1,0 +1,55 @@
+# Core Team Meeting 2018-08-29 19:00
+
+## Attendees:
+# Present:
+- Peter Law
+- Antoine Petty
+- Andy Barrett-Sprot
+- Tyler Ward
+- Kajetan Champlewski
+- Andy Busse (minutes)
+- Alistair Lynn (partial)
+# Apologies:
+- Dan Trickey
+- Holly Holder
+- Jake Howard
+
+## Agenda:
+1. Key Issues https://github.com/srobo/core-team-minutes/issues 
+	1. Major blockers to announcing the competition cycle to volunteers and schools 
+    1. Venue Booking
+    2. Kit status
+    3. Software readiness
+    4. Budget
+  2. Other issues
+    1. Volunteer communication
+    2. Handover of key assets from Trustees
+      1. Storage container keyholders
+2. AOB
+  1. Monthly report
+  2. Inventory - items held by people no longer associated with SR
+
+## Minutes: 
+1. 
+  1. General reminder of the urgency of announcing the competition as school term starts next week.
+    1. Core team agreed that a provisional venue booking needs to be made before announcing the competition cycle. Kajetan presented progress on venue booking - presently the two more likely venues are Newbury Racecourse and Hampshire Court Hotel. All of the core team are reminded to add to the venue investigation spreadsheet, and are reminded of its urgency.
+    2. Now that access to the storage container has been arranged, Peter proposed a kit testing session at Southampton University on 8th September. No new kit is proposed, although a longer term action will be to investigate an alternative to the Odroid, which has now been deprecated. This issue will be pushed to the Kickstart milestone.
+    3. It was agreed that this issue may be pushed out to Kickstart
+    4. The SR2017 budget has been requested from the Trustees but not yet available. It was agreed that the scope of the draft budget is to provide a rough guide (within roughly £1k) to how much the competition cycle will cost to run, divided into "essential" and "nice to have" components. Then, this will be presented to the Trustees and a discussion between the Trustees and Core Team will need to take place before announcing the competition cycle, especially if the difference between the budget and the bank balance is significant.
+  2.
+    1. Andy BS will email Jimmy asking for access to the mailchimp list, so that he can send a welcome message to volunteers who have signed up through the website, highlighting how to get involved. This will be shown to the core team before sending.
+    2. Antoine now has the social media details, and Peter has requested root on the SR linode. Andy has received the information about the storage container and the spare key will be forwarded later in the week. Core Team agreed that Andy should be the keyholder for the time being, and Peter/Alistair once extra keys become available.
+
+2.
+  1. Andy has drafted the first monthly report to be sent to the Trustees later in the week, Core Team will review this before sending later in the week.
+  2. Short discussion was held on the status of the inventory. There is a barrier to entry in using the system, with little documentation available. This is unlikely to be fixed quickly so at the kit testing session on the 8th, a training session will be held before any kit is moved around. In parallel to this, Dan volunteered to investigate alternative asset management systems, however as there is a lot of data involved it is likely that we'll stick with the current system for this competition cycle. Also, some assets are held by people no longer associated with SR, as most of these are low-value assets actions regarding this will be deferred until after the kit testing session.
+
+## Action Points:
+
+### General:
+- The core team will review the venues spreadsheet.
+
+### Specific:
+- Kajetan will get quotes from the potential venues and check our needs can be met.
+- Andy BS will prepare a volunteer announcement.
+- Alistair will prepare a draft budget once the SR2017 version has been made available.
