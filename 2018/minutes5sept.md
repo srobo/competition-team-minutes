@@ -1,0 +1,61 @@
+# Core Team Meeting 2018-09-05 19:00
+
+## Attendees:
+# Present:
+- Andy Busse
+- Alistair Lynn
+- Tyler Ward
+- Dan Trickey
+- Kajetan Champlewski
+- Andy Barrett-Sprot
+- Jake Howard
+- Antoine Petty
+- Holly Holder (minutes)
+- Peter Law
+# Apologies:
+- Anton Nikitin
+
+## Agenda:
+1. Agree previous minutes and this agenda
+2. Key Issues https://github.com/srobo/core-team-minutes/issues 
+	1. Venue booking (Kajetan)
+	2. Budget (Alistair)
+3. Other issues 
+	1. Kit status (Peter) 
+	2. Volunteer communication (Andy B-S)
+4. AOB 
+	1. EMF
+	2. Ops manual versioning numbering system
+	3. Email minutes to Core Team mailing list after meetings? It took a while for them to appear on GitHub this week.
+	4. What do we want the focus of these meetings to be (doing or deciding)?
+	5. The Map!
+
+## Minutes: 
+1. 
+2. 
+	1. Newbury and Hampshire Court Hotel are the two current most viable options, Farnborough may be an option but we need to clarify their no public ticket policy. Hampshire Court costs £6,000 per day, we need to find out the cost of Newbury this year. Kajetan will contact Newbury for a quote and clarify Farnborough's policy. Based on the current map of potential teams, it is worth looking into kickstart venues around London, Southampton, Oxford, Bristol, and possibly Cambridge. Schools are a potential venue for kickstart.
+	2. Alistair has only just got access to the previous budget. After we draft a budget we should arrange a meeting with the trustees to discuss fundraising. There may be a possible lead from ASV. We should begin to draft a document for the trustee meeting.
+3.
+	1. Timing/van details need to be agreed for the sorting session this weekend, and information sent out. Saffron could have value but we will decide what functionality we want in the next few weeks, this will depend on Jake's survey.
+	2. Andy BS is open to mentoring ideas. PiWars get teams to physically mentor each other which may be an interesting option.
+4.
+	1. There was a lead for a custom PCB manufacturer which is worth following up.
+	2. Not a core team decision.
+	3.
+	4. Meetings are for collective decisions so we should try to condense them. The core team will aim to create and read an early agenda to help with this.
+	5. Not as many teams as expected. Most teams are in the south. We need to say we are in the UK as many teams are from remote countries. 
+	6. There may be a GDPR git exception, we might be able to keep gitlogs but not git repo data. 
+	7. Depending on the events of the weekend we may have a quick video call on Sunday.
+
+## Action Points:
+
+### General:
+The core team will begin to draft a document for the trustee meeting
+The core team will start to look into Kickstart venues
+The core team will confirm timing/van details for the sorting session this weekend, and send the information out.
+The core team will follow up the PCB lead.
+The core team will aim to create and read an early agenda to help condense meetings.
+The core team will look into increasing the number of participating teams.
+
+### Specific:
+Kajetan will contact Newbury for a quote and clarify Farnborough's policy.
