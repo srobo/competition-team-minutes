@@ -1,30 +1,32 @@
 # Core Team Meeting YYYY-MM-DD 00:00
 
-## Agenda:
-1. Attendees
+## Attendees
 
-...
+### Present
 
-2. AOB
-
-## Attendance:
-- 
 -
 
 ### Apologies
+
 -
 
-## Minutes:
-1. Attendees
+## Agenda
 
-...
+1. Previous minutes: https://github.com/srobo/core-team-minutes/tree/master/2018/YYYY-MM-DD.md
+2.
 
-2. AOB
+## Minutes
+
+1. Minutes to be reviewed in relevant pull request on GitHub
+2.
 
 
-## Action Points:
-### General:
+## Action Points
+
+### General
+
 -
 
 ### Specific
+
 -
