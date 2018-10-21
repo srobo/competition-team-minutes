@@ -52,7 +52,8 @@ def make_github_issue(title, body=None, assignee=None, milestone=None, labels=No
     # Our url to create issues via POST
     url = 'https://api.github.com/repos/{}/{}/issues'.format(REPO_OWNER, REPO_NAME)
     # Create an authenticated session to create the issue
-    session = requests.session(auth=(USERNAME, PASSWORD))
+    session = requests.Session()
+    session.auth = get_credentials()
     # Create our issue
     issue = {'title': title,
              'body': body,
