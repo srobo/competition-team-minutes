@@ -67,5 +67,3 @@ def make_github_issue(title, body=None, assignee=None, milestone=None, labels=No
     else:
         print('Could not create Issue "{}"'.format(title))
         print('Response:', r.content)
-
-make_github_issue('Issue Title', 'Body text', 'assigned_user', 3, ['bug'])
