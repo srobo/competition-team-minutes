@@ -1,16 +1,51 @@
-# From https://gist.github.com/JeffPaine/3145490/raw/8583a2f2fdc7d7e4dea1bcf9695bec6dba90c7d8/make_github_issue.py
+# Adapted from https://gist.github.com/JeffPaine/3145490/raw/8583a2f2fdc7d7e4dea1bcf9695bec6dba90c7d8/make_github_issue.py
 
 import json
+import getpass
+import os.path
 import requests
 
-# Authentication for user filing issue (must have read/write access to
-# repository to add issue to)
-USERNAME = 'CHANGEME'
-PASSWORD = 'CHANGEME'
 
 # The repository to add this issue to
 REPO_OWNER = 'CHANGEME'
 REPO_NAME = 'CHANGEME'
+
+
+def get_credentials():
+    my_dir = os.path.basename(__file__)
+    config_file = os.path.join(my_dir, '..', '.config.json')
+
+    data = {}
+    username = None
+    password = None
+
+    if os.path.exists(config_file):
+        with open(config_file, mode='r') as f:
+            data = json.load(f)
+            username = data['username']
+            password = data.get('password')
+
+            if password is not None:
+                return username, password
+
+    if username is None:
+        username = input("GitHub Username: ")
+
+    if password is None:
+        password = getpass.getpass(
+            "GitHub Password or Auth Token (for {}): ".format(username)
+        )
+
+        store = input("Store password? [y/N]: ")
+        if store in ('Y', 'y'):
+            data['password'] = password
+
+    with open(config_file, mode='w') as f:
+        json.dump(data, f)
+
+    return username, password
+
+
 
 def make_github_issue(title, body=None, assignee=None, milestone=None, labels=None):
     '''Create an issue on github.com using the given parameters.'''
