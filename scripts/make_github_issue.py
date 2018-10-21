@@ -7,8 +7,8 @@ import requests
 
 
 # The repository to add this issue to
-REPO_OWNER = 'CHANGEME'
-REPO_NAME = 'CHANGEME'
+REPO_OWNER = 'srobo'
+REPO_NAME = 'core-team-minutes'
 
 
 def get_credentials():
