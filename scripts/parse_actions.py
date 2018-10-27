@@ -65,10 +65,12 @@ def process_actions(text: str) -> typing.Generator[
 
     for line in lines[action_points_index:]:
         action = parse_action(line)
-        if action is not None:
-            action_id = yield action
-            if action_id is not None:
-                line += " " + action_link(action_id)
+        if action is None:
+            continue
+
+        action_id = yield action
+        if action_id is not None:
+            line += " " + action_link(action_id)
 
     return lines
 
