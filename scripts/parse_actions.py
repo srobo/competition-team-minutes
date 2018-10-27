@@ -92,11 +92,30 @@ def process_actions(text: str) -> typing.Generator[
     return lines
 
 
+def process_actions_returning_lines(
+    text: str,
+    callback: typing.Callable[[Action], int],
+) -> typing.List[str]:
+    generator = process_actions(text)
+    value = next(generator)
+    try:
+        while True:
+            value = generator.send(callback(value))
+    except StopIteration as e:
+        return e.args[0]
+
+
 if __name__ == '__main__':
     import argparse
+    import sys
     parser = argparse.ArgumentParser()
     parser.add_argument('minutes_file', type=argparse.FileType())
     args = parser.parse_args()
 
-    for action in process_actions(args.minutes_file.read()):
-        print(action)
+    def func(action: Action):
+        print(action, file=sys.stderr)
+        if action.id is None:
+            return 0
+
+    for line in process_actions_returning_lines(args.minutes_file.read(), func):
+        print(line)
