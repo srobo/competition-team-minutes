@@ -30,7 +30,7 @@ def parse_action(line: str) -> typing.Optional[Action]:
 
 def process_actions(text: str) -> typing.Generator[
     Action, # The parsed action
-    typing.Optional[bool],  # Whether to update the line with a link to the action
+    typing.Optional[int],  # If not `None`, the line will be updated with a link the issue with the given id
     typing.List[str],   # The possibly-updated lines of the document
 ]:
     lines = text.splitlines()
@@ -40,9 +40,9 @@ def process_actions(text: str) -> typing.Generator[
     for line in lines[action_points_index:]:
         action = parse_action(line)
         if action is not None:
-            update_line = yield action
-            if update_line:
-                line += " " + action_link(action.id)
+            action_id = yield action
+            if action_id is not None:
+                line += " " + action_link(action_id)
 
     return lines
 
