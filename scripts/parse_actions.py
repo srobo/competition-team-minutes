@@ -43,6 +43,7 @@ def parse_action(line: str) -> typing.Optional[Action]:
             id_ = link_match.group('id')
 
         title = title.strip()
+        title = title[0].upper() + title[1:]
 
         return Action(
             id=id_,
