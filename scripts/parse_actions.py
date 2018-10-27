@@ -11,7 +11,7 @@ ACTION_POINT_REGEX = re.compile(r'[\*-]\s+(?P<owner>[-\w\s]+)( will|:) (?P<title
 
 
 def action_url(action_id: int) -> str:
-    return 'https://github.com/srobo/core-team-minutes/issue/{}'.format(action_id)
+    return 'https://github.com/srobo/core-team-minutes/issues/{}'.format(action_id)
 
 
 def action_link(action_id: int) -> str:
