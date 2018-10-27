@@ -70,6 +70,13 @@ def process_actions(text: str) -> typing.Generator[
 
         action_id = yield action
         if action_id is not None:
+            if action.id is not None:
+                raise ValueError(
+                    "Asked to add link which was already present for line:{}".format(
+                        line,
+                    ),
+                )
+
             line += " " + action_link(action_id)
 
     return lines
