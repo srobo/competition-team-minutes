@@ -7,7 +7,18 @@ Action = typing.NamedTuple('Action', (
     ('title', str),
 ))
 
-ACTION_POINT_REGEX = re.compile(r'[\*-]\s+(?P<owner>[-\w\s]+)( will|:) (?P<title>[^\.]+)')
+# Matches markdown bullet points, like `* Dave will do a thing`
+ACTION_POINT_REGEX = re.compile(r'[\*-]\s+(?P<owner>[-\w\s]+)( will|:) (?P<title>.+)')
+ISSUE_LINK_REGEXT = re.compile(r'''
+    \(
+        \[\#\d+\]
+        \(
+            https://github.com/srobo/core-team-minutes/issues/(?P<id>\d+)
+        \)
+    \)
+    ''',
+    re.VERBOSE,
+)
 
 
 def action_url(action_id: int) -> str:
@@ -21,10 +32,22 @@ def action_link(action_id: int) -> str:
 def parse_action(line: str) -> typing.Optional[Action]:
     match = ACTION_POINT_REGEX.search(line)
     if match is not None:
+        title = match.group('title')
+        if title.endswith('.'):
+            title = title[:-1]
+
+        id_ = None
+        link_match = ISSUE_LINK_REGEXT.search(title)
+        if link_match is not None:
+            title = title[:link_match.start()]
+            id_ = link_match.group('id')
+
+        title = title.strip()
+
         return Action(
-            id=None,
+            id=id_,
             owner=match.group('owner'),
-            title=match.group('title'),
+            title=title,
         )
 
 
