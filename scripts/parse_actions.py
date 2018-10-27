@@ -94,7 +94,7 @@ def process_actions(text: str) -> typing.Generator[
 
 def process_actions_returning_lines(
     text: str,
-    callback: typing.Callable[[Action], int],
+    callback: typing.Callable[[Action], typing.Optional[int]],
 ) -> typing.List[str]:
     generator = process_actions(text)
     value = next(generator)
