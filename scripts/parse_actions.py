@@ -81,7 +81,7 @@ def process_actions(text: str) -> typing.Generator[
                 )
 
             line = line.rstrip()
-            link = " " + action_link(action_id)
+            link = " ({})".format(action_link(action_id))
             if line.endswith('.'):
                 line = line[:-1] + link + '.'
             else:
