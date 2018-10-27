@@ -7,7 +7,7 @@ Action = typing.NamedTuple('Action', (
     ('title', str),
 ))
 
-ACTION_POINT_REGEX = re.compile(r'[\s\*-]*(?P<owner>[-\w\s]+)( will|:) (?P<title>[^\.]+)')
+ACTION_POINT_REGEX = re.compile(r'[\*-]\s+(?P<owner>[-\w\s]+)( will|:) (?P<title>[^\.]+)')
 
 
 def action_url(action_id: int) -> str:
