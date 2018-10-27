@@ -18,6 +18,16 @@ def action_link(action_id: int) -> str:
     return "[#{}]({})".format(action_id, action_url(action_id))
 
 
+def parse_action(line: str) -> typing.Optional[Action]:
+    match = ACTION_POINT_REGEX.search(line)
+    if match is not None:
+        return Action(
+            id=None,
+            owner=match.group('owner'),
+            title=match.group('title'),
+        )
+
+
 def parse_actions(text: str) -> typing.Sequence[Action]:
     lines = text.splitlines()
 
@@ -26,13 +36,9 @@ def parse_actions(text: str) -> typing.Sequence[Action]:
     actions = [] # type: typing.List[Action]
 
     for line in lines[action_points_index:]:
-        match = ACTION_POINT_REGEX.search(line)
-        if match is not None:
-            actions.append(Action(
-                id=None,
-                owner=match.group('owner'),
-                title=match.group('title'),
-            ))
+        action = parse_action(line)
+        if action is not None:
+            actions.append(action)
 
     return actions
 
