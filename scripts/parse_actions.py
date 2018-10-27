@@ -28,19 +28,23 @@ def parse_action(line: str) -> typing.Optional[Action]:
         )
 
 
-def parse_actions(text: str) -> typing.Sequence[Action]:
+def process_actions(text: str) -> typing.Generator[
+    Action, # The parsed action
+    typing.Optional[bool],  # Whether to update the line with a link to the action
+    typing.List[str],   # The possibly-updated lines of the document
+]:
     lines = text.splitlines()
 
     action_points_index = lines.index("## Action Points")
 
-    actions = [] # type: typing.List[Action]
-
     for line in lines[action_points_index:]:
         action = parse_action(line)
         if action is not None:
-            actions.append(action)
+            update_line = yield action
+            if update_line:
+                line += " " + action_link(action.id)
 
-    return actions
+    return lines
 
 
 if __name__ == '__main__':
@@ -49,5 +53,5 @@ if __name__ == '__main__':
     parser.add_argument('minutes_file', type=argparse.FileType())
     args = parser.parse_args()
 
-    for action in parse_actions(args.minutes_file.read()):
+    for action in process_actions(args.minutes_file.read()):
         print(action)
