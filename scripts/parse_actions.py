@@ -31,25 +31,27 @@ def action_link(action_id: int) -> str:
 
 def parse_action(line: str) -> typing.Optional[Action]:
     match = ACTION_POINT_REGEX.search(line)
-    if match is not None:
-        title = match.group('title')
-        if title.endswith('.'):
-            title = title[:-1]
+    if match is None:
+        return
 
-        id_ = None
-        link_match = ISSUE_LINK_REGEXT.search(title)
-        if link_match is not None:
-            title = title[:link_match.start()]
-            id_ = link_match.group('id')
+    title = match.group('title')
+    if title.endswith('.'):
+        title = title[:-1]
 
-        title = title.strip()
-        title = title[0].upper() + title[1:]
+    id_ = None
+    link_match = ISSUE_LINK_REGEXT.search(title)
+    if link_match is not None:
+        title = title[:link_match.start()]
+        id_ = link_match.group('id')
 
-        return Action(
-            id=id_,
-            owner=match.group('owner'),
-            title=title,
-        )
+    title = title.strip()
+    title = title[0].upper() + title[1:]
+
+    return Action(
+        id=id_,
+        owner=match.group('owner'),
+        title=title,
+    )
 
 
 def process_actions(text: str) -> typing.Generator[
