@@ -63,7 +63,10 @@ def process_actions(text: str) -> typing.Generator[
 
     action_points_index = lines.index("## Action Points")
 
-    for line in lines[action_points_index:]:
+    for idx, line in enumerate(
+        lines[action_points_index:],
+        start=action_points_index,
+    ):
         action = parse_action(line)
         if action is None:
             continue
@@ -83,6 +86,8 @@ def process_actions(text: str) -> typing.Generator[
                 line = line[:-1] + link + '.'
             else:
                 line += link
+
+            lines[idx] = line
 
     return lines
 
