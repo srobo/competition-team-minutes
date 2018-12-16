@@ -30,7 +30,7 @@ def get_credentials() -> typing.Tuple[str, str]:
                 return username, password
 
     if username is None:
-        username = input("GitHub Username: ")
+        data['username'] = username = input("GitHub Username: ")
 
     if password is None:
         password = getpass.getpass(
