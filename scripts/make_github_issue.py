@@ -2,7 +2,7 @@
 
 import json
 import getpass
-import os.path
+from pathlib import Path
 import typing
 
 import requests
@@ -14,15 +14,14 @@ REPO_NAME = 'core-team-minutes'
 
 
 def get_credentials() -> typing.Tuple[str, str]:
-    my_dir = os.path.basename(__file__)
-    config_file = os.path.join(my_dir, '..', '.config.json')
+    config_file = Path(__file__).parent.parent / '.config.json'
 
     data = {}  # type: typing.Dict[str, str]
     username = None
     password = None
 
-    if os.path.exists(config_file):
-        with open(config_file, mode='r') as f:
+    if config_file.exists():
+        with config_file.open() as f:
             data = json.load(f)
             username = data['username']
             password = data.get('password')
@@ -42,7 +41,7 @@ def get_credentials() -> typing.Tuple[str, str]:
         if store in ('Y', 'y'):
             data['password'] = password
 
-    with open(config_file, mode='w') as f:
+    with config_file.open(mode='w') as f:
         json.dump(data, f)
 
     return username, password
