@@ -7,6 +7,12 @@ import typing
 
 import requests
 
+Issue = typing.NamedTuple('Issue', (
+    ('id', int),
+    ('url', str),
+    ('assignees', typing.List[str]),
+    ('title', str),
+))
 
 # The repository to add this issue to
 REPO_OWNER = 'srobo'
@@ -63,7 +69,7 @@ class GitHub:
         self.session = requests.Session()
         self.session.auth = get_credentials()
 
-    def make_issue(self, title: str, body: str, assignee: str) -> None:
+    def make_issue(self, title: str, body: str, assignee: str) -> Issue:
         '''Create an issue on github.com using the given parameters.'''
         # Create our issue
         issue = {
@@ -76,3 +82,12 @@ class GitHub:
         response.raise_for_status()
         if response.status_code != 201:
             raise FailedToCreateIssue(title, response)
+
+        data = response.json()
+
+        return Issue(
+            data['number'],
+            data['html_url'],
+            [x['login'] for x in data['assignees']],
+            data['title'],
+        )
