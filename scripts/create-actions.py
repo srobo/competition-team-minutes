@@ -2,15 +2,23 @@
 
 import argparse
 import functools
+import json
+from pathlib import Path
 import typing
 
-from make_github_issue import GitHub, REPO_NAME, REPO_OWNER
+from make_github_issue import GitHub, GitHubIdentity, REPO_NAME, REPO_OWNER
 from parse_actions import Action, process_actions_returning_lines
 
 
 class ActionsProcessor:
-    def __init__(self, api: GitHub, dry_run: bool) -> None:
+    def __init__(
+        self,
+        api: GitHub,
+        name_map: typing.Dict[str, GitHubIdentity],
+        dry_run: bool,
+    ) -> None:
         self.api = api
+        self.name_map = name_map
         self.dry_run = dry_run
 
     def _process_action(
@@ -22,8 +30,15 @@ class ActionsProcessor:
             # Leave existing entries alone
             return action.id
 
-        # TODO: map from names to GitHub logins
-        assignee = action.owner
+        try:
+            assignee = self.name_map[action.owner]
+        except KeyError:
+            print(
+                "Unknown assignee {!r}. Either adjust the action or add them to"
+                " the name map file",
+            )
+            return None
+
         body = "From {}".format(from_url)
 
         if self.dry_run:
@@ -62,6 +77,16 @@ class ActionsProcessor:
             markdown_file.write("\n".join(lines))
 
 
+def load_name_map() -> typing.Dict[str, GitHubIdentity]:
+    name_map_file = Path(__file__).parent.parent / '.name_map.json'
+    logins_to_names = json.loads(name_map_file.read_text())
+    return {
+        name: GitHubIdentity(login)
+        for login, names in logins_to_names.items()
+        for name in names
+    }
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -79,7 +104,9 @@ def parse_args() -> argparse.Namespace:
 
 
 def main(args):
-    processor = ActionsProcessor(GitHub(), args.dry_run)
+    name_map = load_name_map()
+
+    processor = ActionsProcessor(GitHub(), name_map, args.dry_run)
 
     for markdown_file in args.actions_files:
         processor.process_actions(markdown_file)

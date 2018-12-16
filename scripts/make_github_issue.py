@@ -7,10 +7,12 @@ import typing
 
 import requests
 
+GitHubIdentity = typing.NewType('GitHubIdentity', str)
+
 Issue = typing.NamedTuple('Issue', (
     ('id', int),
     ('url', str),
-    ('assignees', typing.List[str]),
+    ('assignees', typing.List[GitHubIdentity]),
     ('title', str),
 ))
 
@@ -69,7 +71,7 @@ class GitHub:
         self.session = requests.Session()
         self.session.auth = get_credentials()
 
-    def make_issue(self, title: str, body: str, assignee: str) -> Issue:
+    def make_issue(self, title: str, body: str, assignee: GitHubIdentity) -> Issue:
         '''Create an issue on github.com using the given parameters.'''
         # Create our issue
         issue = {
@@ -88,6 +90,6 @@ class GitHub:
         return Issue(
             data['number'],
             data['html_url'],
-            [x['login'] for x in data['assignees']],
+            [GitHubIdentity(x['login']) for x in data['assignees']],
             data['title'],
         )
