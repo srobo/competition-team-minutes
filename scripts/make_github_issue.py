@@ -73,7 +73,7 @@ class GitHub:
             'assignee': assignee,
         }
         # Add the issue to our repository
-        response = self.session.post(self.URL, json.dumps(issue))
+        response = self.session.post(self.URL, json=issue)
         response.raise_for_status()
         if response.status_code != 201:
             raise FailedToCreateIssue(title, response)
