@@ -60,7 +60,7 @@ class ActionsProcessor:
 
         print("Created issue {} assigned to @{}: {}".format(
             issue.id,
-            ", ".join(issue.assignees),
+            ", @".join(issue.assignees),
             issue.title,
         ))
 
