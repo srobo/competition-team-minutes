@@ -46,22 +46,30 @@ def get_credentials():
     return username, password
 
 
+class FailedToCreateIssue(Exception):
+    def __init__(self, title, response):
+        super(FailedToCreateIssue, self).__init__(
+            "Failed to created issue {!r}".format(title),
+        )
+        self.response = response
 
-def make_github_issue(title, body, assignee):
-    '''Create an issue on github.com using the given parameters.'''
-    # Our url to create issues via POST
-    url = 'https://api.github.com/repos/{}/{}/issues'.format(REPO_OWNER, REPO_NAME)
-    # Create an authenticated session to create the issue
-    session = requests.Session()
-    session.auth = get_credentials()
-    # Create our issue
-    issue = {'title': title,
-             'body': body,
-             'assignee': assignee}
-    # Add the issue to our repository
-    response = session.post(url, json.dumps(issue))
-    if response.status_code == 201:
-        print('Successfully created Issue "{}"'.format(title))
-    else:
-        print('Could not create Issue "{}"'.format(title))
-        print('Response:', response.content)
+
+class GitHub(object):
+    def __init__(self):
+        self.session = requests.Session()
+        self.session.auth = get_credentials()
+
+    def make_issue(self, title, body, assignee):
+        '''Create an issue on github.com using the given parameters.'''
+        # Our url to create issues via POST
+        url = 'https://api.github.com/repos/{}/{}/issues'.format(REPO_OWNER, REPO_NAME)
+        # Create an authenticated session to create the issue
+        # Create our issue
+        issue = {'title': title,
+                'body': body,
+                'assignee': assignee}
+        # Add the issue to our repository
+        response = self.session.post(url, json.dumps(issue))
+        response.raise_for_status()
+        if response.status_code != 201:
+            raise FailedToCreateIssue(title, response)
