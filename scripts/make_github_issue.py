@@ -48,13 +48,11 @@ def get_credentials():
 
 class FailedToCreateIssue(Exception):
     def __init__(self, title, response):
-        super(FailedToCreateIssue, self).__init__(
-            "Failed to created issue {!r}".format(title),
-        )
+        super().__init__("Failed to created issue {!r}".format(title))
         self.response = response
 
 
-class GitHub(object):
+class GitHub:
     def __init__(self):
         self.session = requests.Session()
         self.session.auth = get_credentials()
