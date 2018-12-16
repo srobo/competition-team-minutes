@@ -27,7 +27,7 @@ class ActionsProcessor:
         body = "From {}".format(from_url)
 
         if self.dry_run:
-            print("Would create issue for {} to {!r} with body:{}".format(
+            print("Would create issue for @{} to {!r} with body:{}".format(
                 assignee,
                 action.title,
                 "\n> " + ("\n> ".join(body.splitlines())),
@@ -36,7 +36,7 @@ class ActionsProcessor:
 
         issue = self.api.make_issue(action.title, body, assignee)
 
-        print("Created issue {} assigned to {}: {}".format(
+        print("Created issue {} assigned to @{}: {}".format(
             issue.id,
             ", ".join(issue.assignees),
             issue.title,
