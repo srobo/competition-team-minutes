@@ -3,6 +3,8 @@
 import json
 import getpass
 import os.path
+import typing
+
 import requests
 
 
@@ -11,11 +13,11 @@ REPO_OWNER = 'srobo'
 REPO_NAME = 'core-team-minutes'
 
 
-def get_credentials():
+def get_credentials() -> typing.Tuple[str, str]:
     my_dir = os.path.basename(__file__)
     config_file = os.path.join(my_dir, '..', '.config.json')
 
-    data = {}
+    data = {}  # type: typing.Dict[str, str]
     username = None
     password = None
 
@@ -58,11 +60,11 @@ class GitHub:
         REPO_NAME,
     )
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.session = requests.Session()
         self.session.auth = get_credentials()
 
-    def make_issue(self, title, body, assignee):
+    def make_issue(self, title: str, body: str, assignee: str) -> None:
         '''Create an issue on github.com using the given parameters.'''
         # Create our issue
         issue = {
