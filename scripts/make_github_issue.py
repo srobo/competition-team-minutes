@@ -47,7 +47,7 @@ def get_credentials():
 
 
 
-def make_github_issue(title, body=None, assignee=None, milestone=None, labels=None):
+def make_github_issue(title, body, assignee):
     '''Create an issue on github.com using the given parameters.'''
     # Our url to create issues via POST
     url = 'https://api.github.com/repos/{}/{}/issues'.format(REPO_OWNER, REPO_NAME)
@@ -57,9 +57,7 @@ def make_github_issue(title, body=None, assignee=None, milestone=None, labels=No
     # Create our issue
     issue = {'title': title,
              'body': body,
-             'assignee': assignee,
-             'milestone': milestone,
-             'labels': labels}
+             'assignee': assignee}
     # Add the issue to our repository
     response = session.post(url, json.dumps(issue))
     if response.status_code == 201:
