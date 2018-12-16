@@ -9,7 +9,8 @@ Action = typing.NamedTuple('Action', (
 
 # Matches markdown bullet points, like `* Dave will do a thing`
 ACTION_POINT_REGEX = re.compile(r'[\*-]\s+(?P<owner>[-\w\s]+)( will|:) (?P<title>.+)')
-ISSUE_LINK_REGEXT = re.compile(r'''
+ISSUE_LINK_REGEXT = re.compile(
+    r'''
     \(
         \[\#\d+\]
         \(
@@ -32,7 +33,7 @@ def action_link(action_id: int) -> str:
 def parse_action(line: str) -> typing.Optional[Action]:
     match = ACTION_POINT_REGEX.search(line)
     if match is None:
-        return
+        return None
 
     title = match.group('title')
     if title.endswith('.'):
