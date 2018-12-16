@@ -40,14 +40,21 @@ class ActionsProcessor:
             return None
 
         body = "From {}".format(from_url)
+        body_for_print = "\n> " + ("\n> ".join(body.splitlines()))
 
         if self.dry_run:
             print("Would create issue for @{} to {!r} with body:{}".format(
                 assignee,
                 action.title,
-                "\n> " + ("\n> ".join(body.splitlines())),
+                body_for_print,
             ))
             return None
+
+        print("Creating issue for @{} to {!r} with body:{}".format(
+            assignee,
+            action.title,
+            body_for_print,
+        ))
 
         issue = self.api.make_issue(action.title, body, assignee)
 
