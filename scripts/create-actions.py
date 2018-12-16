@@ -81,6 +81,7 @@ class ActionsProcessor:
         )
 
         if not self.dry_run:
+            markdown_file.seek(0)
             markdown_file.write("\n".join(lines))
 
 
