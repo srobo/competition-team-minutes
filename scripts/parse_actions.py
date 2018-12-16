@@ -43,7 +43,7 @@ def parse_action(line: str) -> typing.Optional[Action]:
     link_match = ISSUE_LINK_REGEXT.search(title)
     if link_match is not None:
         title = title[:link_match.start()]
-        id_ = link_match.group('id')
+        id_ = int(link_match.group('id'))
 
     title = title.strip()
     title = title[0].upper() + title[1:]
