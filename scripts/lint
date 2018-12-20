@@ -5,10 +5,10 @@ MY_DIR=$(dirname $0)
 FILES=($MY_DIR/*py)
 FILES="${FILES[@]}"
 
-mypy $FILES
+flake8 $FILES
 result=$?
 
-flake8 $FILES
+mypy $FILES
 result=$((result | $?))
 
 exit $result
