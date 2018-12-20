@@ -1,4 +1,4 @@
-# Adapted from https://gist.github.com/JeffPaine/3145490/raw/8583a2f2fdc7d7e4dea1bcf9695bec6dba90c7d8/make_github_issue.py
+# Adapted from https://gist.github.com/JeffPaine/3145490/revisions#diff-6c74585fc93fb54ed50f85e4166e2fb4
 
 import json
 import getpass
