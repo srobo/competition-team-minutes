@@ -1,9 +1,9 @@
 # Adapted from https://gist.github.com/JeffPaine/3145490/revisions#diff-6c74585fc93fb54ed50f85e4166e2fb4
 
-import json
 import getpass
-from pathlib import Path
+import json
 import typing
+from pathlib import Path
 
 import requests
 

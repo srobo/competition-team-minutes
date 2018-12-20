@@ -3,12 +3,16 @@
 import argparse
 import functools
 import json
-from pathlib import Path
 import typing
+from pathlib import Path
 
 from make_github_issue import GitHub, GitHubIdentity
-from parse_actions import  REPO_NAME, REPO_OWNER
-from parse_actions import Action, process_actions_returning_lines
+from parse_actions import (
+    REPO_NAME,
+    REPO_OWNER,
+    Action,
+    process_actions_returning_lines,
+)
 
 
 class ActionsProcessor:
