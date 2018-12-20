@@ -57,7 +57,7 @@ def parse_action(line: str) -> typing.Optional[Action]:
 
 def process_actions(text: str) -> typing.Generator[
     Action,  # The parsed action
-    typing.Optional[int],  # If not `None`, the line will be updated with a link the issue with the given id
+    typing.Optional[int],  # If not `None`, the line will be updated with a link to the issue with the given id
     typing.List[str],   # The possibly-updated lines of the document
 ]:
     lines = text.splitlines()
