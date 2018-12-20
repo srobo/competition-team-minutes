@@ -12,8 +12,8 @@ instance. There is a Python script to support this:
 ```
 The script requires Python 3.5+ and the [requests][python-requests] library. It
 uses the [GitHub REST API v3][github-rest-api], so while it should work just
-with a password, creating a [Personal Access Token][api-tokens] is _strongly_
-recommended instead.
+with a password, creating a [Personal Access Token][api-tokens] with scope
+`repo:public_repo` is _strongly_ recommended instead.
 
 [core-team]: https://srobo.gitbook.io/ops-manual/annual-robotics-competition/core-team
 [github-issues]: https://github.com/srobo/core-team-minutes/issues
