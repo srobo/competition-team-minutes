@@ -16,10 +16,6 @@ Issue = typing.NamedTuple('Issue', (
     ('title', str),
 ))
 
-# The repository to add this issue to
-REPO_OWNER = 'srobo'
-REPO_NAME = 'core-team-minutes'
-
 
 def get_credentials() -> typing.Tuple[str, str]:
     config_file = Path(__file__).parent.parent / '.config.json'

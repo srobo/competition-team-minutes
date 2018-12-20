@@ -1,11 +1,16 @@
 import re
 import typing
 
+REPO_OWNER = 'srobo'
+REPO_NAME = 'core-team-minutes'
+
 Action = typing.NamedTuple('Action', (
     ('id', typing.Optional[int]),
     ('owner', str),
     ('title', str),
 ))
+
+ISSUES_URL = 'https://github.com/{}/{}/issues/'.format(REPO_OWNER, REPO_NAME)
 
 # Matches markdown bullet points, like `* Dave will do a thing`
 ACTION_POINT_REGEX = re.compile(r'[\*-]\s+(?P<owner>[-\w\s]+)( will|:) (?P<title>.+)')
@@ -14,16 +19,16 @@ ISSUE_LINK_REGEXT = re.compile(
     \(
         \[\#\d+\]
         \(
-            https://github.com/srobo/core-team-minutes/issues/(?P<id>\d+)
+            {issues_url}(?P<id>\d+)
         \)
     \)
-    ''',
+    '''.format(issues_url=re.escape(ISSUES_URL)),
     re.VERBOSE,
 )
 
 
 def action_url(action_id: int) -> str:
-    return 'https://github.com/srobo/core-team-minutes/issues/{}'.format(action_id)
+    return '{}/{}'.format(ISSUES_URL, action_id)
 
 
 def action_link(action_id: int) -> str:
