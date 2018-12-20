@@ -114,7 +114,11 @@ def parse_args() -> argparse.Namespace:
 def main(args):
     name_map = load_name_map()
 
-    processor = ActionsProcessor(GitHub(), name_map, args.dry_run)
+    processor = ActionsProcessor(
+        GitHub(REPO_OWNER, REPO_NAME),
+        name_map,
+        args.dry_run,
+    )
 
     for markdown_file in args.actions_files:
         processor.process_actions(markdown_file)

@@ -62,14 +62,14 @@ class FailedToCreateIssue(Exception):
 
 
 class GitHub:
-    URL = 'https://api.github.com/repos/{}/{}/issues'.format(
-        REPO_OWNER,
-        REPO_NAME,
-    )
-
-    def __init__(self) -> None:
+    def __init__(self, repo_owner: str, repo_name: str) -> None:
         self.session = requests.Session()
         self.session.auth = get_credentials()
+
+        self.issues_api_url = 'https://api.github.com/repos/{}/{}/issues'.format(
+            repo_owner,
+            repo_name,
+        )
 
     def make_issue(self, title: str, body: str, assignee: GitHubIdentity) -> Issue:
         '''Create an issue on github.com using the given parameters.'''
@@ -80,7 +80,7 @@ class GitHub:
             'assignee': assignee,
         }
         # Add the issue to our repository
-        response = self.session.post(self.URL, json=issue)
+        response = self.session.post(self.issues_api_url, json=issue)
         response.raise_for_status()
         if response.status_code != 201:
             raise FailedToCreateIssue(title, response)
