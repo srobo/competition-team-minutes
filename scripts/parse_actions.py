@@ -35,6 +35,17 @@ def action_link(action_id: int) -> str:
     return "[#{}]({})".format(action_id, action_url(action_id))
 
 
+def sentence_case(string: str) -> str:
+    """
+    Capitalise the first character of a string.
+
+    This approximates a conversion to "Sentence case" but intentionally
+    _doesn't_ lowercase the string first, in order to copy with phrases which
+    contain other proper nouns.
+    """
+    return string[0].upper() + string[1:]
+
+
 def parse_action(line: str) -> typing.Optional[Action]:
     match = ACTION_POINT_REGEX.search(line)
     if match is None:
@@ -50,8 +61,7 @@ def parse_action(line: str) -> typing.Optional[Action]:
         title = title[:link_match.start()]
         id_ = int(link_match.group('id'))
 
-    title = title.strip()
-    title = title[0].upper() + title[1:]
+    title = sentence_case(title.strip())
 
     return Action(
         id=id_,
