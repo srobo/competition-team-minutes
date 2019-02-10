@@ -143,9 +143,10 @@ class ActionsProcessor:
         )
 
         if not self.dry_run:
+            newlines = markdown_file.newlines
             markdown_file.seek(0)
-            markdown_file.write("\n".join(lines))
-            markdown_file.write("\n")
+            markdown_file.write(newlines.join(lines))
+            markdown_file.write(newlines)
 
 
 def load_name_map() -> typing.Dict[str, GitHubIdentity]:
