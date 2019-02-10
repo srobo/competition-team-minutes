@@ -89,10 +89,17 @@ class ActionsProcessor:
             response = 'unknown'
             yes_responses = ('y', '')
             while response not in yes_responses + ('n', 'e'):
-                response = input("Create issue for @{} to {!r}? [Y/n]: ".format(
+                response = input("Create issue for @{} to {!r}? [Y/n/e]: ".format(
                     assignee,
                     action.title,
                 )).lower()
+
+            if response == 'e':
+                existing_id = ''
+                while not existing_id.isdigit():
+                    existing_id = input("Enter the eixsting issue id: ").lower()
+
+                return int(existing_id)
 
             if response not in yes_responses:
                 return None
