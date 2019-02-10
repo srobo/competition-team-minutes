@@ -55,10 +55,12 @@ class ActionsProcessor:
         api: GitHub,
         name_map: typing.Dict[str, GitHubIdentity],
         dry_run: bool,
+        interactive: bool,
     ) -> None:
         self.api = api
         self.name_map = name_map
         self.dry_run = dry_run
+        self.interactive = interactive
 
     def _process_action(
         self,
@@ -80,6 +82,20 @@ class ActionsProcessor:
 
         body = "From {}".format(from_url)
         body_for_print = "\n> " + ("\n> ".join(body.splitlines()))
+
+        print()
+
+        if self.interactive:
+            response = 'unknown'
+            yes_responses = ('y', '')
+            while response.lower() not in yes_responses + ('n',):
+                response = input("Create issue for @{} to {!r}? [Y/n]: ".format(
+                    assignee,
+                    action.title,
+                ))
+
+            if response not in yes_responses:
+                return None
 
         if self.dry_run:
             print("Would create issue for @{} to {!r} with body:{}".format(
@@ -143,6 +159,12 @@ def parse_args() -> argparse.Namespace:
         action='store_false',
     )
     parser.add_argument(
+        '-i',
+        '--interactive',
+        default=False,
+        action='store_true',
+    )
+    parser.add_argument(
         'actions_files',
         metavar='MINUTES.md',
         nargs='+',
@@ -158,6 +180,7 @@ def main(args):
         GitHub(REPO_OWNER, REPO_NAME),
         name_map,
         args.dry_run,
+        args.interactive,
     )
 
     for markdown_file in args.actions_files:
