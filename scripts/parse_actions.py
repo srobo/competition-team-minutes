@@ -1,5 +1,6 @@
 import re
 import typing
+import urllib.parse
 
 REPO_OWNER = 'srobo'
 REPO_NAME = 'core-team-minutes'
@@ -28,7 +29,7 @@ ISSUE_LINK_REGEXT = re.compile(
 
 
 def action_url(action_id: int) -> str:
-    return '{}/{}'.format(ISSUES_URL, action_id)
+    return urllib.parse.urljoin(ISSUES_URL, str(action_id))
 
 
 def action_link(action_id: int) -> str:
