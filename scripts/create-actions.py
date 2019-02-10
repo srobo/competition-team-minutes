@@ -67,7 +67,7 @@ class ActionsProcessor:
     ) -> typing.Optional[int]:
         if action.id is not None:
             # Leave existing entries alone
-            return action.id
+            return None
 
         try:
             assignee = self.name_map[action.owner]
