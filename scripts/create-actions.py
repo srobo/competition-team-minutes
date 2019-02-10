@@ -137,9 +137,10 @@ def load_name_map() -> typing.Dict[str, GitHubIdentity]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '--dry-run',
-        default=False,
-        action='store_true',
+        '--commit',
+        dest='dry_run',
+        default=True,
+        action='store_false',
     )
     parser.add_argument(
         'actions_files',
