@@ -88,11 +88,11 @@ class ActionsProcessor:
         if self.interactive:
             response = 'unknown'
             yes_responses = ('y', '')
-            while response.lower() not in yes_responses + ('n',):
+            while response not in yes_responses + ('n', 'e'):
                 response = input("Create issue for @{} to {!r}? [Y/n]: ".format(
                     assignee,
                     action.title,
-                ))
+                )).lower()
 
             if response not in yes_responses:
                 return None
