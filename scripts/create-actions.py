@@ -76,7 +76,7 @@ class ActionsProcessor:
         except KeyError:
             print(
                 "Unknown assignee {!r}. Either adjust the action or add them to"
-                " the name map file",
+                " the name map file".format(action.owner),
             )
             return None
 
