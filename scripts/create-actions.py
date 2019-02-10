@@ -3,6 +3,7 @@
 import argparse
 import functools
 import json
+import subprocess
 import typing
 from pathlib import Path
 
@@ -13,6 +14,15 @@ from parse_actions import (
     Action,
     process_actions_returning_lines,
 )
+
+
+class FileIsNotInARepositoryError(Exception):
+    def __init__(self, file_name: str) -> None:
+        super().__init__(
+            "The file '{}' is not within a git repository and cannot be "
+            "annotated.".format(file_name),
+        )
+        self.file_name = file_name
 
 
 class ActionsProcessor:
@@ -71,12 +81,35 @@ class ActionsProcessor:
 
         return issue.id
 
+    def _make_repo_relative(self, file_name: str) -> str:
+        """
+        Given a file name, computes the relative path to that file _from within
+        the repo which contains it_.
+
+        This copes with running this tool against files in _other_ repos.
+        """
+        file_path = Path(file_name)
+
+        try:
+            repo_root = subprocess.check_output(
+                ['git', 'rev-parse', '--show-toplevel'],
+                cwd=str(file_path.parent),
+            ).decode('utf-8').strip()
+        except subprocess.CalledProcessError as e:
+            if e.returncode == 128:
+                # Not a repo
+                raise FileIsNotInARepositoryError(file_name) from e
+
+            raise
+
+        return str(file_path.relative_to(Path(repo_root)))
+
     def process_actions(self, markdown_file: typing.TextIO) -> None:
         print("Processing {}...".format(markdown_file.name))
         from_url = 'https://github.com/{}/{}/blob/master/{}#specific'.format(
             REPO_OWNER,
             REPO_NAME,
-            markdown_file.name,
+            self._make_repo_relative(markdown_file.name),
         )
 
         markdown_file.seek(0)
