@@ -97,7 +97,7 @@ class ActionsProcessor:
             if response == 'e':
                 existing_id = ''
                 while not existing_id.isdigit():
-                    existing_id = input("Enter the eixsting issue id: ").lower()
+                    existing_id = input("Enter the existing issue id: ").lower()
 
                 return int(existing_id)
 
