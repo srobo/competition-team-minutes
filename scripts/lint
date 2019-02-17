@@ -1,0 +1,14 @@
+#!/bin/bash
+
+MY_DIR=$(dirname $0)
+
+FILES=($MY_DIR/*py)
+FILES="${FILES[@]}"
+
+flake8 $FILES
+result=$?
+
+mypy $FILES
+result=$((result | $?))
+
+exit $result
