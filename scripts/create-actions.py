@@ -12,8 +12,12 @@ from parse_actions import (
     REPO_NAME,
     REPO_OWNER,
     Action,
+    NoActions,
     process_actions_returning_lines,
 )
+
+BOLD = '\033[1m'
+ENDC = '\033[0m'
 
 
 class FileIsNotInARepositoryError(Exception):
@@ -192,9 +196,20 @@ def main(args):
         args.interactive,
     )
 
+    errors = []
     for markdown_file in args.actions_files:
-        processor.process_actions(markdown_file)
+        try:
+            processor.process_actions(markdown_file)
+        except NoActions:
+            errors.append("WARNING: no actions were found in {!r}".format(
+                markdown_file.name,
+            ))
+
+    for message in errors:
+        print(BOLD + message + ENDC)
+
+    return len(errors)
 
 
 if __name__ == '__main__':
-    main(parse_args())
+    exit(main(parse_args()))

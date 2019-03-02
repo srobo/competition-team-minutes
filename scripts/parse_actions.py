@@ -28,6 +28,10 @@ ISSUE_LINK_REGEXT = re.compile(
 )
 
 
+class NoActions(Exception):
+    pass
+
+
 def action_url(action_id: int) -> str:
     return urllib.parse.urljoin(ISSUES_URL, str(action_id))
 
@@ -78,7 +82,10 @@ def process_actions(text: str) -> typing.Generator[
 ]:
     lines = text.splitlines()
 
-    action_points_index = lines.index("## Action Points")
+    try:
+        action_points_index = lines.index("## Action Points")
+    except ValueError:
+        raise NoActions from None
 
     for idx, line in enumerate(
         lines[action_points_index:],
