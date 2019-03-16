@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
 import argparse
+import ctypes
 import functools
 import json
+import platform
 import subprocess
 import typing
 from pathlib import Path
@@ -15,9 +17,6 @@ from parse_actions import (
     NoActions,
     process_actions_returning_lines,
 )
-
-BOLD = '\033[1m'
-ENDC = '\033[0m'
 
 
 class FileIsNotInARepositoryError(Exception):
@@ -163,6 +162,41 @@ def load_name_map() -> typing.Dict[str, GitHubIdentity]:
     }
 
 
+class Formatter:
+    ANSI_BOLD = '\033[1m'
+    ANSI_RED = '\033[91m'
+    ANSI_ENDC = '\033[0m'
+
+    START = ANSI_BOLD + ANSI_RED
+
+    FALLBACK_START = '** '
+    FALLBACK_END = ' **'
+
+    def __init__(self):
+        super().__init__()
+
+        self._start, self._end = self.START, self.ANSI_ENDC
+
+        # Assume non-windows platforms will just work
+        if platform.system() == 'Windows':
+            try:
+                self._enable_ansii_escapes()
+            except Exception:
+                self._start, self._end = self.FALLBACK_START, self.FALLBACK_END
+
+    def _enable_ansii_escapes(self):
+        if platform.win32_ver()[0] != '10':
+            raise Exception("Windows versions before 10 don't support ANSII escapes")
+
+        # From https://stackoverflow.com/a/36760881 - enable support for ANSII
+        # escape sequences on Windows 10
+        kernel32 = ctypes.windll.kernel32
+        kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
+
+    def as_error(self, message: str) -> None:
+        return self._start + message + self._end
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -205,8 +239,10 @@ def main(args):
                 markdown_file.name,
             ))
 
-    for message in errors:
-        print(BOLD + message + ENDC)
+    if errors:
+        formatter = Formatter()
+        for message in errors:
+            print(formatter.as_error(message))
 
     return len(errors)
 
