@@ -32,7 +32,7 @@ def make_repo_relative(file_name: str) -> str:
 
     This copes with running this tool against files in _other_ repos.
     """
-    file_path = Path(file_name)
+    file_path = Path(file_name).resolve()
 
     try:
         repo_root = subprocess.check_output(
@@ -150,7 +150,7 @@ class ActionsProcessor:
 
 
 def load_name_map() -> typing.Dict[str, GitHubIdentity]:
-    name_map_file = Path(__file__).parent.parent / '.name_map.json'
+    name_map_file = Path(__file__).resolve().parent.parent / '.name_map.json'
     logins_to_names = json.loads(name_map_file.read_text())
     return {
         name: GitHubIdentity(login)
