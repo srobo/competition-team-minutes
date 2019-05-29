@@ -244,7 +244,7 @@ def main(args):
         for message in errors:
             print(formatter.as_error(message))
 
-    return len(errors)
+    return 1 if errors else 0
 
 
 if __name__ == '__main__':
