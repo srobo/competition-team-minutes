@@ -1,9 +1,9 @@
-# Core Team Minutes
+# Competition Team Minutes
 
-Minutes from the [Core Team][core-team] meetings.
+Minutes from the [Competition Team][competition-team] meetings.
 
 The canonical instance of this repository is on github at
-https://github.com/srobo/core-team-minutes.
+https://github.com/srobo/competition-team-minutes.
 
 Actions from each meeting are recorded as [issues][github-issues] on the github
 instance. There is a Python script to support this:
@@ -14,8 +14,8 @@ The script requires Python 3.5+ and the [requests][python-requests] library. It
 uses the [GitHub REST API v3][github-rest-api], for which you should create a
 [Personal Access Token][api-tokens] with scope `repo:public_repo`.
 
-[core-team]: https://srobo.gitbook.io/ops-manual/annual-robotics-competition/core-team
-[github-issues]: https://github.com/srobo/core-team-minutes/issues
+[competition-team]: https://opsmanual.studentrobotics.org/annual-robotics-competition/competition-programme-team
+[github-issues]: https://github.com/srobo/competition-team-minutes/issues
 [python-requests]: https://pypi.org/project/requests
 [github-rest-api]: https://developer.github.com/v3/issues/
 [api-tokens]: https://blog.github.com/2013-05-16-personal-api-tokens/
