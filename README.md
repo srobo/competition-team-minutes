@@ -5,6 +5,8 @@ Minutes from the [Competition Team][competition-team] meetings.
 The canonical instance of this repository is on github at
 https://github.com/srobo/competition-team-minutes.
 
+For the SR2019 season, this team was called the "Core Team".
+
 Actions from each meeting are recorded as [issues][github-issues] on the github
 instance. There is a Python script to support this:
 ```
