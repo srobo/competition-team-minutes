@@ -12,8 +12,7 @@
 
 ## Agenda
 
-1. Previous minutes: https://github.com/srobo/core-team-minutes/tree/master/2018/YYYY-MM-DD.md
-2.
+1. ...
 
 ## Minutes
 
