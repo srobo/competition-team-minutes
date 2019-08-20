@@ -1,4 +1,4 @@
-# Core Team Meeting YYYY-MM-DD 00:00
+# Competition Team Meeting YYYY-MM-DD 00:00
 
 ## Attendees
 
@@ -12,8 +12,7 @@
 
 ## Agenda
 
-1. Previous minutes: https://github.com/srobo/core-team-minutes/tree/master/2018/YYYY-MM-DD.md
-2.
+1. ...
 
 ## Minutes
 
