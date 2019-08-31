@@ -3,6 +3,7 @@
 import argparse
 import functools
 import json
+import os.path
 import subprocess
 import typing
 from pathlib import Path
@@ -25,7 +26,7 @@ class FileIsNotInARepositoryError(Exception):
         self.file_name = file_name
 
 
-def make_repo_relative(file_name: str) -> str:
+def make_repo_relative_url(file_name: str) -> str:
     """
     Given a file name, computes the relative path to that file _from within
     the repo which contains it_.
@@ -46,7 +47,9 @@ def make_repo_relative(file_name: str) -> str:
 
         raise
 
-    return str(file_path.relative_to(Path(repo_root)))
+    relative_path = str(file_path.relative_to(Path(repo_root)))
+    relative_url = relative_path.replace(os.path.sep, '/')
+    return relative_url
 
 
 class ActionsProcessor:
@@ -133,7 +136,7 @@ class ActionsProcessor:
         from_url = 'https://github.com/{}/{}/blob/master/{}#specific'.format(
             REPO_OWNER,
             REPO_NAME,
-            make_repo_relative(markdown_file.name),
+            make_repo_relative_url(markdown_file.name),
         )
 
         markdown_file.seek(0)
