@@ -1,4 +1,4 @@
-# Competition Team Meeting YYYY-MM-DD 00:00
+# Competition Team Meeting YYYY-MM-DD
 
 ## Attendees
 

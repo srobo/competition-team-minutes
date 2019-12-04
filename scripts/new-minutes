@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+if [ -z "$EDITOR" ]
+then
+    EDITOR=nano
+fi
+
+cd $(dirname $0)/..
+
+DATE=$(date -I)
+SRYEAR=$(ls -d SR* | tail --lines=1)
+
+git checkout -b $DATE
+sed "s/YYYY-MM-DD/$DATE/" template.md > $SRYEAR/$DATE.md
+$EDITOR $SRYEAR/$DATE.md
