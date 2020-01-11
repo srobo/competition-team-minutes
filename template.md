@@ -14,7 +14,7 @@
 
 1. ...
 
-## Minutes
+## Topics
 
 1. Minutes to be reviewed in relevant pull request on GitHub
 2.
