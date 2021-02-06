@@ -94,7 +94,7 @@
   - Lead to confusion about how to cope with LSS/WGS not submitting code
   - So we didn’t gain much from the earlier deadline
 
-## Action Points
+## Tasks
 
 - Have a checklist of tasks which need doing
   - Pre-event
@@ -121,8 +121,6 @@
 - Try and make webcam feeds be horizontal (and hide names)
 
 - Remove flashing colons on countdown screen
-
-- Clean Jake’s room
 
 - Change contrast of title on rules screen
 
