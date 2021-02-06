@@ -108,7 +108,7 @@
 
 - Set & publicise a regular scheduled start time for volunteers
 
-- Solve the OBS video playback issues
+- Solve the OBS video scheduling issues
 
 - Simplify adding league matches to the compstate
 
