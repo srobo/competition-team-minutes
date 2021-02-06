@@ -96,35 +96,35 @@
 
 ## Tasks
 
-- Have a checklist of tasks which need doing
+- Have a checklist of tasks which need doing ([#262](https://github.com/srobo/competition-team-minutes/issues/262))
   - Pre-event
   - Match running
   - Go-live
   - Have a doing to make this.
 
-- Construct schedule and run matches on Friday evening
+- Construct schedule and run matches on Friday evening ([#263](https://github.com/srobo/competition-team-minutes/issues/263))
 
-- Prepare music more in advance, and have more of it
+- Prepare music more in advance, and have more of it ([#264](https://github.com/srobo/competition-team-minutes/issues/264))
 
-- Set & publicise a regular scheduled start time for volunteers
+- Set & publicise a regular scheduled start time for volunteers ([#265](https://github.com/srobo/competition-team-minutes/issues/265))
 
-- Solve the OBS video scheduling issues
+- Solve the OBS video scheduling issues ([#266](https://github.com/srobo/competition-team-minutes/issues/266))
 
-- Simplify adding league matches to the compstate
+- Simplify adding league matches to the compstate ([#267](https://github.com/srobo/competition-team-minutes/issues/267))
 
-- Allocate prep time for commentators
+- Allocate prep time for commentators ([#268](https://github.com/srobo/competition-team-minutes/issues/268))
 
-- Allocate a Q&A moderator, post questions (with answers) in Slack for the commentators to talk about
+- Allocate a Q&A moderator, post questions (with answers) in Slack for the commentators to talk about ([#269](https://github.com/srobo/competition-team-minutes/issues/269))
 
-- Have larger match spacing
+- Have larger match spacing ([#270](https://github.com/srobo/competition-team-minutes/issues/270))
 
-- Try and make webcam feeds be horizontal (and hide names)
+- Try and make webcam feeds be horizontal (and hide names) ([#271](https://github.com/srobo/competition-team-minutes/issues/271))
 
-- Remove flashing colons on countdown screen
+- Remove flashing colons on countdown screen ([#272](https://github.com/srobo/competition-team-minutes/issues/272))
 
-- Change contrast of title on rules screen
+- Change contrast of title on rules screen ([#273](https://github.com/srobo/competition-team-minutes/issues/273))
 
-- Send email to all teams about whether they’d like mentoring
+- Send email to all teams about whether they’d like mentoring ([#274](https://github.com/srobo/competition-team-minutes/issues/274))
   - Also send to discord
 
-- Send email to league 2 no-shows about whether they’re interested in competing
+- Send email to league 2 no-shows about whether they’re interested in competing ([#275](https://github.com/srobo/competition-team-minutes/issues/275))
