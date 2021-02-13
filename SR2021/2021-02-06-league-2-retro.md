@@ -8,6 +8,7 @@
 - James Seden Smith
 - Jenny Fletcher
 - Peter Law
+- Will Barber
 
 ## Topics
 
