@@ -103,7 +103,7 @@
 
 ## Action Points
 
-- Look into normalizing audio (<https://www.alphr.com/normalize-volume-vlc/>)
-- Add “publicise start time for volunteers” onto checklist
-- Drop out teams who have never said anything
-- Mention that code for session 4 may be carried over to knockouts of teams don’t resubmit
+- Look into normalizing audio (<https://www.alphr.com/normalize-volume-vlc/>): <https://github.com/srobo/tasks/issues/664>
+- Add “publicise start time for volunteers” onto checklist: <https://github.com/srobo/tasks/issues/656>
+- Drop out teams who have never said anything: <https://github.com/srobo/competition-team-minutes/issues/290>
+- Mention that code for session 4 may be carried over to knockouts of teams don’t resubmit: <https://github.com/srobo/tasks/issues/665>
