@@ -4,6 +4,7 @@
 
 - Alistair Lynn
 - Andy Barrett-Sprot
+- Antione Petty
 - Dan Trickey
 - Jake Howard
 - James Seden Smith
