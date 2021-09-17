@@ -30,7 +30,7 @@
     * Potential to get some raspberry pi’s
     * TL;DR: kit is potentially usable, pending kit team discussion.
 * Dates:
-    * Schools start w/c 1st August
+    * Schools start w/c 1st September
     * Normally we start Late Oct/Early Nov
     * Maybe aim for a post-half-term Kickstart.
         * (Half term: Monday 25 October to Friday 29 October 2021).
