@@ -300,8 +300,6 @@ Where several people had made similar notes these are merged, into a single bull
 * Fewer late nights
 * More simulator developers
 * Would have been nice for a greater no. of teams to make it into knockouts
-* beehives |
-  bees
 * Today: earlier preparation of livestream analysis content.
 * Year/Today: A clearer picture of which things would turn out to be important.Or: more forward thinking and planning.We've achieved a lot of great stuff, but much of it (again) happened as a result of a last minute push.
 * Better match timing display for commentary than staging screen
