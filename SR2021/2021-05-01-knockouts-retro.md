@@ -119,7 +119,7 @@ There were lots of teams this year on Instagram. We do have a small presence the
 
 There hasn’t been very much.
 
-The kit team has not been involved in developing the simulator. When asked about this, the kit team committee were not interested in being involved even though members of the competition team offered considerable support. There wasn’t anyone with the knowledge or time to take on supporting the simulator.
+The kit team has not been involved in developing the simulator. When asked about this, the kit team committee were not interested in being involved even though members of the competition team offered considerable support. There wasn’t anyone on the kit team with the knowledge or time to take on supporting the simulator.
 
 Feels like there’s a lack of trust between the two teams.
 
