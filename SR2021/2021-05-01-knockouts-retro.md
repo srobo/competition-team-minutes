@@ -45,7 +45,7 @@ This would also enable the commentators to fill for time when needed, while the 
 
 This being a separate role would enable easier comms between support volunteers and commentators if needed.
 
-How widely did we ask about this? We did have Illana looking at this, but hit technical issues.
+How widely did we ask about this? We did have Alana looking at this, but hit technical issues.
 
 Sounds like others would have been interested in doing this, but we weren’t able to find them.
 
