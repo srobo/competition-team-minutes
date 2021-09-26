@@ -1,0 +1,90 @@
+# Competition team meeting Minutes 2021-09-22
+
+Agenda items:
+
+* Email to teams
+* The Simulator
+* Timelines
+* Tasks
+    * Recurring tasks
+    * Things which aren’t assigned yet
+* The game
+
+Minutes:
+
+* Number of functioning kits
+    * 25-30
+    * 20 are with teams.
+* Email to teams
+    * What are we asking?
+        * Primary question: Are you interested in taking part?
+            * This should include a link to the form.
+                * Questions on the form:
+                    * Do you have a kit already
+                    * ...
+            * Do we put a sign-up form on the website?
+                * Yes we should
+        * Covid requirements?
+            * Maybe schools might not know
+        * How will your team be meeting, are they able to meet regularly physically?
+        * Tell teams: 
+            * We assume the competition will be in-person in a venue.
+            * Arena will be designed to fit in a smaller space (fitting in a classroom)
+            * Physical robots.
+        * We should ask teams if they would be able to _host _an event: (they should fill in these details in the application form).
+            * Other schools attend.
+            * Smaller size.
+            * Blueshirts run it.
+            * We should aim the email towards this.
+        * If regional events are viable
+            * We can simplify the competition so that students can run it
+            * Insurance
+                * Concerns over training students (2-3 hours needed?)
+                * What’s the difference between this and a tech day?
+                    * Not really?
+                * Need to meet with Scarzy to carry on.
+* Kickstart
+    * All online
+    * Activities:
+        * Check their kits as early as possible.
+* Game design
+    * If international teams can compete?
+        * Can we design a game that allows teams to compete at home?
+            * Potentially, Alistair has some ideas.
+    * Let’s schedule a meeting to design the game.
+* The Simulator
+    * Can we do a _hybrid _competition? (as in, a competition that relies on the simulator, instead of it being an extra tool).
+        * Running both the simulator and the kit is a problem
+            * There’s lots of work needed for the simulator (as usual)
+            * There’s lots of work for the kit (Upgrade to Python 3).
+            * There’s a lot of documentation to do.
+        * Not super feasible (see above)
+        * Encourages teams to build a robot similar to the simulator robot.
+        * Some teams may not have the compute power to run the Webots simulator.
+    * What about a post-physical competition virtual event?
+        * Can decide post-kickstart.
+        * Concerns over if the physical competition doesn’t feel as final
+            * We’d have different sets of prizes
+* Timeline:
+    * Kickstart:
+        * What’s blocking running Kickstart:
+            * Vast majority of teams
+            * Game
+            * Kit software needs to be updated.
+            * Kits need to be in the team’s hands.
+            * Microgames.
+        * Kit support session before kickstart
+            * We could sort out sessions to get the kits working
+            * Microgames with the teams at the same time?
+            * Mention this to the kit team.
+                * Let’s meet with the kit team
+* Future meetings:
+    * Better Timekeeping
+    * Appoint a chair
+    * Appoint a minute-taker.
+    * Agenda before meeting.
+    
+## action items
+- Andy B-S: schedule a meeting to design the game.
+The Simulator
+- Andy B-S Arrange a kit team meeting
