@@ -114,3 +114,55 @@ retrospective topics we felt warranted it.
   volunteers who have contributed to the topics.
 - Nominate a person to run the retro in advance (so they can plan the scope, setup the tool, etc.)
 - It could be useful to have a mechanism to collect topics during the event
+
+## Raw comments
+
+These notes are extracted from the retro tool used to facilitate the discussions above.
+
+Where several people had made similar notes these are merged, into a single bullet point, with `|` separating the entries.
+
+### Liked
+
+- Trying a new structure for Kickstart & mircogames.
+- Kit shipping has gone smoothly
+- Livestream worked
+- Interesting questions from the viewers
+- It happened | We kicked off :) | We shipped a kickstart
+- We worked well together to get the kit downloads available
+- Greatly simplified hosted services -- no user accounts, no IDE.
+- We've shipped a completely new kit stack! | Shipped python 3
+- We looked at the recurring tasks repo
+- Everything was done mostly on time | Most things were actually ready ahead of time :)
+- Rules and microgames went up immediately
+- Reacted to technical difficulties well
+
+### Learned
+
+- We really do need to practice the livestream beforehand.
+- Windows + PuTTY + U-Boot = Pain | PuTTY sucks
+- Youtube links are weird in presentations
+
+### Lacked
+
+- Looking at last year's retro before we started | Building on learnings of previous years.
+- Rehearsal for the presentation | presentation rehearsal | Presentation production quality. Feels like a rehearsal could have made a substantial difference.
+- A producer for the livestream
+- Kit disclaimer deadline needs to be communicated effectively | Communication around shipping deadlines | teams to have completed disclaimer forms on time
+- knowing the scope of the retro
+- A good stream of questions
+- Testing equipment for kit testing. e.g oscilloscope, bench supply
+- A second presenter on the livestream
+- Development documentation as we've gotten rid of the IDE
+- Checklists or automation. A lot of what we do for Kickstart is repetitive year-on-year, yet we seem to keep reinventing it.
+
+### Longed For
+
+- Knowledge sharing on how the kit works
+- More visual microgames
+- Early planning & visibility. It felt like there was quite a lot which was still being sorted out this week, on all fronts. | A full list of tasks and progress
+- Earlier kit packing / prep weekends
+- Announcing competition date and location
+- We should consider accessibility in all aspects of what we do: - Colour blind - Deaf (we need livestream captions)
+- Early communication to teams.
+- The kit feedback form got slightly forgotten until the last minute
+- Live audience
