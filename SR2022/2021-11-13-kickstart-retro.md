@@ -37,7 +37,7 @@ retrospective topics we felt warranted it.
 
 #### Actions
 
-- Peter: Start further discussions on this (maybe in the all committees meeting, though it doesn’t need to be limited)
+- Peter: Start discussions on learning from retros ([#306](https://github.com/srobo/competition-team-minutes/issues/306))
 
 ### Presentation rehearsal
 
@@ -53,11 +53,8 @@ retrospective topics we felt warranted it.
 
 #### Actions
 
-- Jake: Create better documentation about how to run a livestream, likely
-  extracted from the league session docs
-- Peter: Start a discussion with the marketing team about livestreams and best
-  practises; their input would be valuable here, is this an area it makes sense
-  for them to own?
+- Jake: Create better documentation about how to run a livestream ([#307](https://github.com/srobo/competition-team-minutes/issues/307))
+- Peter: Start a discussion with the marketing team about livestreams ([#308](https://github.com/srobo/competition-team-minutes/issues/308))
 
 ### Kit knowledge sharing
 
@@ -79,7 +76,7 @@ retrospective topics we felt warranted it.
 
 #### Actions
 
-- Dan: Add to agenda for discussion on next KT meeting
+- Dan: Add to agenda for discussion on next Kit Team meeting ([#309](https://github.com/srobo/competition-team-minutes/issues/309))
 
 ### More visual microgames
 
@@ -93,7 +90,7 @@ retrospective topics we felt warranted it.
 
 #### Actions
 
-- Andy BS: See what lessons we can learn from this year’s responses
+- Andy BS: See what lessons we can learn from this year’s microgames responses ([#310](https://github.com/srobo/competition-team-minutes/issues/310))
 
 ### Earlier kit packing / prep weekend
 
@@ -104,7 +101,7 @@ retrospective topics we felt warranted it.
 
 #### Actions
 
-- Jake: A doing around improving kit maintenance docs
+- Jake: Organise a doing around improving kit maintenance docs ([#311](https://github.com/srobo/competition-team-minutes/issues/311))
 
 ### Meeting feedback
 
